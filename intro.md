@@ -136,4 +136,30 @@ The significant advantage offered by SSH over its predecessors is the use of enc
 6. HTTP doesn't require domain validation, where as HTTPS requires at least domain validation and certain certificates even require legal document validation.
 7. No encryption in `HTTP`, with `HTTPS` the data is encrypted before sending.
 
+---
 
+## 1.4 Character Encoding
+A character encoding tells the computer how to interpret raw zeroes and ones into real characters. It usually does this by pairing numbers with characters. Words and sentences in text are created from characters and these characters are grouped into a character set
+
+<h4><strong>ASCII</strong></h4>
+
+> It is a code for representing English characters as numbers, with each letter assigned a number from 0 to 127.
+> 
+> It is a single byte encoding only using the bottom 7 bits. 
+
+<h4><strong>ANSI</strong></h4>
+
+> an extension of the ASCII character set in that it includes all the ASCII characters with an additional 128 character codes.
+
+>ASCII just defines a 7 bit code page with 128 symbols. ANSI extends this to 8 bit and there are several different code pages for the symbols 128 to 255.
+
+<h4><strong>Unicode</strong></h4>
+
+> Unicode is a standard which defines the internal text coding system in almost all operating systems used in computers at present, because Unicode can handle characters for almost all modern languages and even some ancient languages at the same time, as long as the client has fonts for the particular language installed in his system.
+
+<h4><strong>UTF</strong></h4>
+
+> Unicode assigns each character a unique number, or code point. It defines two mapping methods, the UTF (Unicode Transformation Format) encodings, and the UCS (Universal Character Set) encodings.
+> UTF-8 is gaining traction as the dominant international encoding of the web. 
+> UTF-8, UTF-16 and UTF-32 are probably the most commonly used encodings.
+>  They go beyond 8-bits and support almost every language in the world.
