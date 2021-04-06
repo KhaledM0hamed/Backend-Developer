@@ -1,5 +1,5 @@
 # 1. Introduction:
-## 1.2 Semantic Versioning
+## 1.1 Semantic Versioning
 <h3 align='center'><strong>Summary</strong></h3>
 
 > Given a version number MAJOR.MINOR.PATCH
@@ -61,4 +61,55 @@
 </strong></h4>
 
 > No, “v1.2.3” is not a semantic version. However, prefixing a semantic version with a “v” is a common way (in English) to indicate it is a version number. Abbreviating “version” as “v” is often seen with version control. Example: git tag v1.2.3 -m "Release version 1.2.3", in which case “v1.2.3” is a tag name and the semantic version is “1.2.3”.
+
+## 1.2 SSH
+
+<h3 align='center'><strong>How Does SSH Work</strong></h3>
+
+> SSH, or Secure Shell, is a remote administration protocol that allows users to control and modify their remote servers over the Internet.
+> 
+> If you’re using Linux or Mac, then using SSH is very simple. If you use Windows, you will need to utilize an SSH client to open SSH connections. 
+> 
+> The most popular SSH client is PuTTY.
+
+<h3 align='center'><strong>Understanding Different Encryption Techniques</strong></h3>
+
+The significant advantage offered by SSH over its predecessors is the use of encryption to ensure secure transfer of information between the host and the client. `Host` refers to the remote server you are trying to access, while the `client` is the computer you are using to access the host. There are three different encryption technologies used by SSH:
+
+1. Symmetrical encryption
+2. Asymmetrical encryption
+3. Hashing.
+
+<h4><strong>Symmetric Encryption</strong></h4>
+
+> Symmetric encryption is a form of encryption where a `secret key` is used for both encryption and decryption of a message by both the client and the host. Effectively, any one possessing the key can decrypt the message being transferred.
+> 
+> Symmetrical encryption is often called `shared key` or `shared secret` encryption. There is usually only one key that is used, or sometimes a pair keys where one key can easily be calculated using the other key.
+> 
+> The process of creating a symmetric key is carried out by a `key exchange algorithm`.
+
+<h4><strong>Asymmetric Encryption</strong></h4>
+
+> Unlike symmetrical encryption, asymmetrical encryption uses two separate keys for encryption and decryption. These two keys are known as the `public key` and the `private key`. Together, both these keys form a `public-private key pair`.
+> 
+> The relation between the two keys is highly complex: a message that is encrypted by a machine’s public key, can only be decrypted by the same machine’s private key. This one-way relation means that the public key cannot decrypt its own messages, nor can it decrypt anything encrypted by the private key.
+>
+>
+> Unlike the general perception, asymmetrical encryption is not used to encrypt the entire SSH session. Instead, it is only used during the key exchange algorithm of symmetric encryption. Before initiating a secured connection, both parties generate temporary public-private key pairs, and share their respective private keys to produce the shared secret key.
+> 
+> Once a secured symmetric communication has been established, the server uses the clients public key to generate and challenge and transmit it to the client for authentication. If the client can successfully decrypt the message, it means that it holds the private key required for the connection. The SSH session then begins.
+
+<h4><strong>Hashing</strong></h4>
+
+> One-way hashing is another form of cryptography used in Secure Shell Connections. One-way-hash functions differ from the above two forms of encryption in the sense that they are never meant to be decrypted. They generate a unique value of a fixed length for each input that shows no clear trend which can exploited. This makes them practically impossible to reverse.
+>
+> It is easy to generate a cryptographic hash from a given input, but impossible to generate the input from the hash. This means that if a client holds the correct input, they can generate the crypto-graphic hash and compare its value to verify whether they possess the correct input.
+>
+> SSH uses hashes to verify the authenticity of messages. This is done using `HMACs`, or `H`ash-`b`ased `M`essage `A`uthentication `C`odes. This ensures that the command received is not tampered with in any way.
+
+>Each message that is transmitted must contain a `MAC`, which is calculated using the symmetric key, packet sequence number, and the message contents. It is sent outside the symmetrically encrypted data as the concluding section of the communication packet.
+
+
+
+
 

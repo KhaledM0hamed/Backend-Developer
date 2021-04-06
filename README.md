@@ -4,7 +4,7 @@
 ## Contents:
 1. [Introduction](./intro.md)
    - [1.1 Semantic Versioning](./intro.md#1.1-Semantic-Versioning)
-   - [1.2 SSH]
+   - [1.2 SSH](./intro.md#1.2-SSH)
    - [1.3 HTTP/HTTPS]
    - [1.4 Character Encoding]
 2. [Internet](./internet.md)
