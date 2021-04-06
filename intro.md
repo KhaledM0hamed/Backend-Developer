@@ -8,6 +8,9 @@
 > 1. MAJOR version when you make incompatible API changes,
 > 2. MINOR version when you add functionality in a backwards compatible manner, and
 > 3. PATCH version when you make backwards compatible bug fixes.
+
+---
+
 <h3 align='center'><strong>FAQ</strong></h3>
 <h4><strong>How should I deal with revisions in the 0.y.z initial development phase?</strong></h4>
 
@@ -62,6 +65,8 @@
 
 > No, “v1.2.3” is not a semantic version. However, prefixing a semantic version with a “v” is a common way (in English) to indicate it is a version number. Abbreviating “version” as “v” is often seen with version control. Example: git tag v1.2.3 -m "Release version 1.2.3", in which case “v1.2.3” is a tag name and the semantic version is “1.2.3”.
 
+---
+
 ## 1.2 SSH
 
 <h3 align='center'><strong>How Does SSH Work</strong></h3>
@@ -109,7 +114,26 @@ The significant advantage offered by SSH over its predecessors is the use of enc
 
 >Each message that is transmitted must contain a `MAC`, which is calculated using the symmetric key, packet sequence number, and the message contents. It is sent outside the symmetrically encrypted data as the concluding section of the communication packet.
 
+---
+
+## 1.3 HTTP/HTTPS
+<h4><strong>What is HTTP?</strong></h4>
+
+> HTTP stands for `Hypertext Transfer Protocol`. When you enter `http://` in your address bar in front of the domain, it tells the browser to connect over HTTP. HTTP uses TCP (Transmission Control Protocol), generally over port 80, to send and receive data packets over the web. To put it simply it is a protocol that's used by a client and server which allows you to communicate with other websites. The client sends a request message to an HTTP server (after the TCP handshake) which hosts a website, the server then replies with the response message. The response message contains completion status information, such as `HTTP/1.1 200 OK`.
+
+<h4><strong>What is HTTPS?</strong></h4>
+
+> HTTPS stands for `Hypertext Transfer Protocol Secure` (also referred to as HTTP over TLS or HTTP over SSL(Secure Sockets Layer)). When you enter `https://` in your address bar in front of the domain, it tells the browser to connect over HTTPS. Generally sites running over HTTPS will have a redirect in place so even if you type in `http://` it will redirect to deliver over a secured connection. HTTPS also uses TCP (Transmission Control Protocol) to send and receive data packets, but it does so over port 443, within a connection encrypted by Transport Layer Security (TLS).
 
 
+<h3 align='center'><strong>What is the difference between HTTP and HTTPS?</strong></h3>
+
+1. HTTP URL in your browser's address bar is `http://` and the HTTPS URL is `https://`.
+2. HTTP is unsecured while HTTPS is secured.
+3. HTTP sends data over port `80` while HTTPS uses port `443`.
+4. HTTP operates at `application layer`, while HTTPS operates at `transport layer`.
+5. No `SSL` certificates are required for `HTTP`, with `HTTPS` it is required that you have an `SSL` certificate and it is signed by a `CA`.
+6. HTTP doesn't require domain validation, where as HTTPS requires at least domain validation and certain certificates even require legal document validation.
+7. No encryption in `HTTP`, with `HTTPS` the data is encrypted before sending.
 
 
