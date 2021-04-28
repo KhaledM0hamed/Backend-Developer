@@ -160,6 +160,9 @@ A character encoding tells the computer how to interpret raw zeroes and ones int
 <h4><strong>UTF</strong></h4>
 
 > Unicode assigns each character a unique number, or code point. It defines two mapping methods, the UTF (Unicode Transformation Format) encodings, and the UCS (Universal Character Set) encodings.
+> 
 > UTF-8 is gaining traction as the dominant international encoding of the web. 
+> 
 > UTF-8, UTF-16 and UTF-32 are probably the most commonly used encodings.
+> 
 >  They go beyond 8-bits and support almost every language in the world.
